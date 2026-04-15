@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velazquez Asset Solutions | Washington State Tax Surplus Recovery</title>
+  <meta name="description" content="We help Washington State property owners recover unclaimed tax surplus funds. No recovery, no fee. You keep 95% of every dollar we find." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #0a1f3c; --blue: #1a56a0; --gold: #c49a3c; --gold-light: #e0b84a; --off-white: #f8f6f1; --white: #ffffff; --text: #1a1a2e; --text-muted: #5a6478; --border: rgba(10,31,60,0.12); }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 40px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; flex-direction: column; gap: 1px; }
+    .logo-top { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 500; letter-spacing: 0.06em; color: var(--navy); }
+    .logo-bottom { font-size: 9px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-phone { display: flex; align-items: center; gap: 10px; }
+    .nav-phone a { font-size: 15px; font-weight: 500; color: var(--navy); text-decoration: none; }
+    .nav-cta { background: var(--navy) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; }
+    .hero { padding: 148px 40px 100px; background: var(--navy); position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .hero-inner { max-width: 760px; position: relative; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 400; line-height: 1.15; color: var(--white); margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.65); max-width: 520px; line-height: 1.75; margin-bottom: 44px; font-weight: 300; }
+    .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); text-decoration: none; padding: 15px 32px; border-radius: 4px; font-size: 15px; font-weight: 500; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; }
+    .hero-note { margin-top: 32px; font-size: 13px; color: rgba(255,255,255,0.4); letter-spacing: 0.03em; }
+    .trust-bar { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 22px 40px; display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-muted); }
+    .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    section { padding: 96px 40px; }
+    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 400; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
+    .section-intro { font-size: 16px; color: var(--text-muted); max-width: 540px; line-height: 1.75; margin-bottom: 56px; font-weight: 300; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .step { background: var(--white); padding: 40px 32px; position: relative; }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; color: rgba(10,31,60,0.06); line-height: 1; margin-bottom: 20px; }
+    .step h3 { font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+    .step-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+    .why-bg { background: var(--off-white); }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .why-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 32px; display: flex; gap: 20px; }
+    .why-icon-wrap { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .why-card h4 { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+    .faq-list { max-width: 680px; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.75; font-weight: 300; }
+    .cta-band { background: var(--navy); padding: 96px 40px; text-align: center; }
+    .cta-band h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-band > p { font-size: 16px; color: rgba(255,255,255,0.55); max-width: 460px; margin: 0 auto 48px; line-height: 1.75; font-weight: 300; }
+    .contact-block { display: inline-flex; flex-direction: column; align-items: center; gap: 14px; }
+    .phone-display { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; color: var(--white); letter-spacing: 0.04em; text-decoration: none; }
+    .phone-display:hover { color: var(--gold-light); }
+    .divider-or { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; text-transform: uppercase; }
+    .email-display { font-size: 15px; color: rgba(255,255,255,0.6); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; }
+    .email-display:hover { color: var(--gold-light); }
+    .cta-tagline { margin-top: 36px; font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; }
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.3); }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-phone a:not(.nav-cta) { display: none; }
+      .hero { padding: 120px 24px 80px; }
+      section { padding: 72px 24px; }
+      .trust-bar { padding: 18px 24px; gap: 20px; }
+      .steps { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; flex-direction: column; text-align: center; }
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-note { animation: fadeUp 0.6s 0.4s ease both; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <div class="logo-top">Velazquez Asset Solutions</div>
+      <div class="logo-bottom">Washington State · Tax Surplus Recovery</div>
+    </div>
+    <div class="nav-phone">
+      <a href="tel:5096709659">509-670-9659</a>
+      <a href="tel:5096709659" class="nav-cta">Free Consultation</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Washington State Tax Surplus Recovery</div>
+      <h1>You may be owed money<br>you <em>don't know about</em></h1>
+      <p class="hero-sub">When a property is sold at tax foreclosure for more than what was owed in taxes, that surplus legally belongs to the former owner — not the government. We find it. We file for it. You get paid.</p>
+      <div class="hero-actions">
+        <a href="tel:5096709659" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.22 2.93 2 2 0 012.22 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.55-.55a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call 509-670-9659
+        </a>
+        <a href="mailto:jerdan@velazquezassetsolutions.com" class="btn-secondary">or send us an email →</a>
+      </div>
+      <p class="hero-note">No recovery. No fee. You keep 95% of every dollar we find.</p>
+    </div>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-item"><div class="trust-dot"></div> Washington State specialists</div>
+    <div class="trust-item"><div class="trust-dot"></div> Free case review</div>
+    <div class="trust-item"><div class="trust-dot"></div> 5% fee — only on success</div>
+    <div class="trust-item"><div class="trust-dot"></div> All 10 major WA counties</div>
+    <div class="trust-item"><div class="trust-dot"></div> No upfront cost, ever</div>
+  </div>
+
+  <section>
+    <div class="section-label">How it works</div>
+    <h2>Three steps to recovering what's yours</h2>
+    <p class="section-intro">We handle everything — researching county records, locating owners, filing the paperwork. You just say yes and we get to work.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-accent"></div>
+        <div class="step-num">01</div>
+        <h3>Free case review</h3>
+        <p>We research your property across county records and verify whether unclaimed surplus funds exist — at absolutely no cost to you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>We file on your behalf</h3>
+        <p>Once confirmed, we handle all documentation, county correspondence, and claim paperwork from start to finish.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>You get paid</h3>
+        <p>When the county releases the funds, you receive 95% of the recovery. Our 5% consulting fee is only collected on success.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-bg">
+    <div class="section-label">Why choose us</div>
+    <h2>Local knowledge. Zero risk. Real results.</h2>
+    <p class="section-intro">We work exclusively in Washington State — which means we know every county's process, timelines, and requirements inside and out.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c49a3c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><h4>Washington specialists</h4><p>We work exclusively in WA state across all major counties — King, Pierce, Snohomish, Yakima, Spokane, and more.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c49a3c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><h4>No recovery, no fee</h4><p>Our 5% consulting fee is only collected when we successfully recover your funds. You take on zero financial risk.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c49a3c" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><h4>We work for you</h4><p>These are your funds. We're here to make sure they get back in your hands — not escheated to the government.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c49a3c" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><h4>Full transparency</h4><p>We keep you informed at every step. No surprises, no hidden fees, no legal jargon — just clear communication.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Common questions</div>
+    <h2>What people ask us</h2>
+    <p class="section-intro">Tax surplus recovery is new to most people. Here are the questions we hear most often.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What is tax surplus and how does it happen?</div>
+        <div class="faq-a">When a county forecloses on a property for unpaid taxes and sells it at auction, the sale sometimes generates more money than what was owed. That excess — called surplus or excess proceeds — legally belongs to the former property owner, not the county. Most people have no idea this money exists.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How much does your service cost?</div>
+        <div class="faq-a">Nothing upfront. We charge a 5% consulting fee, and only collect it if we successfully recover funds for you. If we don't find anything or the claim doesn't go through, you owe us nothing.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does the recovery process take?</div>
+        <div class="faq-a">It varies by county, but most claims in Washington State resolve within 30 to 90 days after filing. We'll give you a realistic timeline once we've reviewed your specific case.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I'm not sure whether I have a claim?</div>
+        <div class="faq-a">That's exactly what our free case review is for. Just call us with your property information and we'll research it at no charge. If there's money available, we'll tell you. If there isn't, we'll tell you that too.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which counties do you cover?</div>
+        <div class="faq-a">We currently serve King, Pierce, Snohomish, Clark, Spokane, Thurston, Yakima, Whatcom, Kitsap, and Island counties — covering the majority of Washington State's tax foreclosure activity.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Think you may have unclaimed funds?</h2>
+    <p>A free 10-minute call is all it takes to find out. We'll tell you exactly where you stand — no pressure, no obligation.</p>
+    <div class="contact-block">
+      <a href="tel:5096709659" class="phone-display">509-670-9659</a>
+      <div class="divider-or">or</div>
+      <a href="mailto:jerdan@velazquezassetsolutions.com" class="email-display">jerdan@velazquezassetsolutions.com</a>
+    </div>
+    <p class="cta-tagline">Serving all Washington State counties &nbsp;·&nbsp; Free consultations &nbsp;·&nbsp; No upfront fees</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Velazquez Asset Solutions &nbsp;·&nbsp; Washington State</p>
+    <p>Not a law firm. Consulting services only.</p>
+  </footer>
+
+</body>
+</html>
